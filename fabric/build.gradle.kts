@@ -43,14 +43,12 @@ loom {
             configName = "Fabric Client"
             setSource(sourceSets["test"])
             ideConfigGenerated(true)
-            vmArgs("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true")
         }
         named("server") {
             server()
             configName = "Fabric Server"
             setSource(sourceSets["test"])
             ideConfigGenerated(true)
-            vmArgs("-Dmixin.debug.verbose=true", "-Dmixin.debug.export=true")
         }
         register("datagen") {
             server()
@@ -75,29 +73,30 @@ publishMods {
     file.set(tasks.named<Jar>("remapJar").get().archiveFile)
     modLoaders.add("fabric")
     changelog = rootProject.file("CHANGELOG.md").readText()
+    displayName = "Wandering Rana Fabric ${Properties.MOD}+${libs.minecraft.get().version}"
     version = "${Properties.MOD}+${libs.minecraft.get().version}-fabric"
     type = STABLE
 
-    curseforge {
-        projectId = Properties.CURSEFORGE_PROJECT_ID
-        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
-
-        minecraftVersions.add(libs.minecraft.get().version!!)
-        javaVersions.add(JavaVersion.VERSION_21)
-
-        clientRequired = true
-        serverRequired = true
-    }
+//    curseforge {
+//        projectId = Properties.CURSEFORGE_PROJECT_ID
+//        accessToken = providers.gradleProperty("CF_API_KEY")
+//
+//        minecraftVersions.add(libs.minecraft.get().version!!)
+//        javaVersions.add(JavaVersion.VERSION_21)
+//
+//        clientRequired = true
+//        serverRequired = true
+//    }
 
     modrinth {
         projectId = Properties.MODRINTH_PROJECT_ID
-        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        accessToken = providers.gradleProperty("MODRINTH_TOKEN")
 
         minecraftVersions.add(libs.minecraft.get().version!!)
     }
 
     github {
-        accessToken = providers.environmentVariable("GITHUB_TOKEN")
-        parent(project(":common").tasks.named("publishGithub"))
+        accessToken = providers.gradleProperty("GH_TOKEN")
+        parent(project(":").tasks.named("publishGithub"))
     }
 }

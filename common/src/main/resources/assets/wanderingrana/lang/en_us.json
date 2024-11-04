@@ -1,0 +1,11 @@
+{
+  "entity.wanderingrana.wandering_rana": "Wandering Rana",
+  "item.wanderingrana.wandering_rana_spawn_egg": "Wandering Rana Spawn Egg",
+  "item.wanderingrana.cold_frog_helmet": "Cold Frog Hat",
+  "item.wanderingrana.cold_frog_boots": "Cold Frog Boots",
+  "item.wanderingrana.temperate_frog_helmet": "Temperate Frog Hat",
+  "item.wanderingrana.temperate_frog_boots": "Temperate Frog Boots",
+  "item.wanderingrana.warm_frog_helmet": "Warm Frog Hat",
+  "item.wanderingrana.warm_frog_boots": "Warm Frog Boots",
+  "itemGroup.wanderingrana.items": "Wandering Rana Items"
+}

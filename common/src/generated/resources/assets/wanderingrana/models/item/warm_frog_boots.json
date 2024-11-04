@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wanderingrana:item/warm_frog_boots"
+  }
+}

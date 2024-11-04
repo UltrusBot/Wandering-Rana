@@ -1,6 +1,7 @@
 package me.ultrusmods.wanderingrana.platform;
 
 import me.ultrusmods.wanderingrana.platform.services.IPlatformHelper;
+import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 
@@ -21,5 +22,10 @@ public class WanderingRanaPlatformHelperNeoForge implements IPlatformHelper {
     public boolean isDevelopmentEnvironment() {
 
         return !FMLLoader.isProduction();
+    }
+
+    @Override
+    public CreativeModeTab.Builder getCreativeTab() {
+        return CreativeModeTab.builder();
     }
 }

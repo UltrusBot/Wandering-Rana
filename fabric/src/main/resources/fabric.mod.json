@@ -20,13 +20,20 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "me.ultrusmods.wanderingrana.WanderingRanaFabric"
+            "me.ultrusmods.wanderingrana.WanderingRanaFabric"
+        ],
+        "client": [
+            "me.ultrusmods.wanderingrana.client.WanderingRanaClientFabric"
+        ],
+        "fabric-datagen": [
+            "me.ultrusmods.wanderingrana.data.WanderingRanaDataGenerator"
         ]
     },
     "mixins": [
         "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
     ],
+    "accessWidener": "${mod_id}.accesswidener",
     "depends": {
         "fabricloader": "${fabric_loader_range}",
         "fabric-api": "*",
