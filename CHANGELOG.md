@@ -1,3 +1,4 @@
-# Changes
-- This is a sample changelog.
-- Delete the previous content within this file when working on a new version.
+- Corrected the helmet used for the creative tab to be the cold frog helmet.
+- Fixed armor on fabric not following head rotation.
+- Fixed untextured part of wandering rana
+- Add the mod icon

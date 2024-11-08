@@ -1,7 +1,7 @@
 package me.ultrusmods.wanderingrana.gradle
 
 object Properties {
-    const val MOD = "0.1.0"
+    const val MOD = "0.2.0"
 
     const val JAVA = 21
 
@@ -14,7 +14,7 @@ object Properties {
     const val LICENSE = "MIT"
 
     const val HOMEPAGE = "https://ultrusmods.me/mod/wandering-rana/"
-    const val CURSEFORGE_PROJECT_ID = "000000"
+    const val CURSEFORGE_PROJECT_ID = "1136091"
     const val MODRINTH_PROJECT_ID = "5R8Qlz9L"
     const val GITHUB_REPO = "UltrusBot/Wandering-Rana"
     const val GITHUB_COMMITISH = "main"

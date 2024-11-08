@@ -11,7 +11,7 @@ public class CreativeModeTabRegistry {
 
     public static final CreativeModeTab WANDERING_RANA_ITEMS = Services.PLATFORM.getCreativeTab()
             .title(Component.translatable("itemGroup.wanderingrana.items"))
-            .icon(ItemRegistry.WARM_FROG_HELMET::getDefaultInstance)
+            .icon(ItemRegistry.COLD_FROG_HELMET::getDefaultInstance)
             .displayItems(((itemDisplayParameters, output) -> {
                 output.accept(ItemRegistry.WANDERING_RANA_SPAWN_EGG);
                 output.accept(ItemRegistry.WARM_FROG_HELMET);

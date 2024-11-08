@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartNames;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,15 +25,21 @@ public class FrogArmorModel extends HumanoidModel<LivingEntity> {
         MeshDefinition meshdefinition = HumanoidModel.createMesh(CubeDeformation.NONE, 0.0F);
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition head = partdefinition.getChild(PartNames.HEAD);
 
-        PartDefinition FrogHat = head.addOrReplaceChild("FrogHat", CubeListBuilder.create().texOffs(0, 0).addBox(-7.0F, -8.0F, -1.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.3F)), PartPose.offset(3.0F, -0.25F, -3.0F));
 
-        PartDefinition ear_right = FrogHat.addOrReplaceChild("ear_right", CubeListBuilder.create(), PartPose.offset(-5.25F, -7.5F, 2.0F));
+
+        PartDefinition FrogHat = head.addOrReplaceChild("FrogHat",
+                CubeListBuilder.create()
+                        .texOffs(0, 0)
+                        .addBox(-7.0F, -8.0F, -1.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)),
+                PartPose.offset(3.0F, -0.25F, -3.0F));
+
+        PartDefinition ear_right = FrogHat.addOrReplaceChild("ear_right", CubeListBuilder.create(), PartPose.offset(-5.25F, -7.75F, 2.0F));
 
         PartDefinition ear_right_r1 = ear_right.addOrReplaceChild("ear_right_r1", CubeListBuilder.create().texOffs(24, 16).addBox(-4.0F, -5.5F, -1.0F, 5.0F, 5.0F, 2.0F, new CubeDeformation(-0.2F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, -0.2618F));
 
-        PartDefinition ear_left = FrogHat.addOrReplaceChild("ear_left", CubeListBuilder.create(), PartPose.offset(-0.75F, -7.5F, 2.0F));
+        PartDefinition ear_left = FrogHat.addOrReplaceChild("ear_left", CubeListBuilder.create(), PartPose.offset(-0.75F, -7.75F, 2.0F));
 
         PartDefinition ear_left_r1 = ear_left.addOrReplaceChild("ear_left_r1", CubeListBuilder.create().texOffs(24, 23).addBox(-1.0F, -5.5F, -1.0F, 5.0F, 5.0F, 2.0F, new CubeDeformation(-0.2F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0436F, 0.0F, 0.2618F));
 
